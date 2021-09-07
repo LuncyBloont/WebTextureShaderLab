@@ -31,6 +31,6 @@ var scriptList = [
 ]
 ```
 运行index.html页面，在右边着色器列表选择Example着色器：
-![第一次选中着色器](example/Example.png "第一次选中着色器")
-![修改着色器属性](example/Example01.png "修改着色器属性")
-![点击空白应用颜色拾取器修改](example/Example02.png "点击空白应用颜色拾取器修改")
+![第一次选中着色器](example/Example.png "第一次选中着色器") <br>
+![修改着色器属性](example/Example1.png "修改着色器属性") <br>
+![点击空白应用颜色拾取器修改](example/Example2.png "点击空白应用颜色拾取器修改") <br>

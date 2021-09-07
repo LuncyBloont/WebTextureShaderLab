@@ -4,12 +4,14 @@ class DemoNoise extends Momo {
 		this.momoName = "Noise";
 		this.canvasWidth = new D2dScaleInt(700);
 		this.canvasHeight = new D2dScaleInt(700);
+		this.scale = new D2dRange(5, 30, 20);
+		this.times = new D2dRange(2, 32, 8);
 		this.frag = `
 			var col = new D2dColor("#FF00FF");
 			var dark = 0;
 			var base = 0;
-			for (var i = 1; i < 16; i *= 2) {
-				dark += tool.rand(x, y, i * 20) / i;
+			for (var i = 1; i < momo.times; i *= 2) {
+				dark += tool.rand(x, y, i * momo.scale) / i;
 				base += 1 / i;
 			}
 			dark /= base;
