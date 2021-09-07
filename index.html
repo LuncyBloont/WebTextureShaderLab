@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Texture Generator</title>
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		
+		<script src="js/momo.js"></script>
+		<script src="js/math.js"></script>
+		<script src="js/momoShow.js"></script>
+		<script src="js/select-list.js"></script>
+		
+	</head>
+	<body>
+		<table class="main-table" border="1">
+			<tr>
+				<th class="texture-view-head">Texture</th>
+				<th>Properties</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="canvas_panel">
+						<canvas id="canvas" width="1024" height="1024" class="main-canvas"></canvas>
+					</div>
+				</td>
+				<td valign="top">
+					<div class="properties-panel">
+						<label>Script</label>
+						<select title="Script" id="script_selector">
+							<option value="Momo" selected="selected">None</option>
+						</select>
+						<script src="js/selector.js"></script>
+						<table id="momo_panel"></table>
+					</div>
+				</td>
+			</tr>
+		</table>
+	<script>
+		renderMomo();
+	</script>
+	</body>
+</html>

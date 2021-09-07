@@ -1,0 +1,59 @@
+.main-canvas {
+	width: 95%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	margin-top: 10px;
+	margin-bottom: 16px;
+	height: auto;
+	box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 2px;
+}
+
+.texture-view-head {
+	width: 60%;
+}
+
+.main-table {
+	width: 100%;
+	height: max-content;
+}
+
+.properties-panel {
+	width: 100%;
+	height: 100%;
+	padding-top: 29px;
+	padding-left: 10%;
+	text-align: left;
+}
+
+#script_selector {
+	width: 50%;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+#script_selector:hover {
+	outline: none;
+}
+
+#script_selector:focus {
+	outline: none;
+}
+
+.canvas_panel {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/alphaBG.png);
+}
+
+#momo_panel {
+	width: 80%;
+	margin-top: 20px;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 4px 1px;
+	padding: 8px;
+}
+
+.item input {
+	width: 90%;
+}
