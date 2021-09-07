@@ -1,0 +1,2 @@
+# WebTextureShaderLab
+一个基于web技术的2D shader框架，使用多线程软渲染。实现了基于js语法的简易片元着色器；实现了Shader脚本参数可视化面板；支持自定义着色器。
