@@ -9,7 +9,7 @@ class DemoGrid extends Momo {
 		this.color1 = new D2dColor("#FFFF00");
 		this.color2 = new D2dColor("#0078FF");
 		this.frag = `
-			var col = new D2dColor(momo.color1);
+			let col = new D2dColor(momo.color1);
 			if ((parseInt(x * momo.gridX) + parseInt(y * momo.gridY) % 2) % 2 == 0) {
 				col = new D2dColor(momo.color2);
 			}

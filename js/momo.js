@@ -85,7 +85,7 @@ class D2dColor {
 		return this.alpha;
 	}
 	ff(v) {
-		var s = parseInt(v).toString(16);
+		let s = parseInt(v).toString(16);
 		if (s.length < 2) return "0" + s;
 		if (s.length > 2) return s.substr(s.length - 2, 2);
 		return s;
@@ -99,12 +99,12 @@ class D2dColor {
 class Momo {
 	constructor() {
 		this.momoName = "default";
-		this.canvasWidth = new D2dScaleInt(100);
-		this.canvasHeight = new D2dScaleInt(100);
+		this.canvasWidth = new D2dScaleInt(800);
+		this.canvasHeight = new D2dScaleInt(800);
 		this.sizeScale = new D2dRange(0, 100, 20);
 		this.rawData = new Uint8ClampedArray(this.canvasWidth.code() * this.canvasHeight.code() * 4);
 		this.frag = `
-			var col = new D2dColor("#000000");
+			let col = new D2dColor("#000000");
 			col.color(x * 255, y * 255, 128, 1);
 			return col;
 		`;
@@ -123,15 +123,15 @@ class Momo {
 		if (this.canvasWidth.code() * this.canvasHeight.code() * 4 != this.rawData.length) {
 			this.rawData = new Uint8ClampedArray(this.canvasWidth.code() * this.canvasHeight.code() * 4);
 		}
-		var g = canvas.getContext("2d");
-		var data = new ImageData(this.rawData, this.canvasWidth.code(), this.canvasHeight.code());
+		let g = canvas.getContext("2d");
+		let data = new ImageData(this.rawData, this.canvasWidth.code(), this.canvasHeight.code());
 		g.putImageData(data, 0, 0);
 	}
 	render() {
-		for (var x = 0; x < this.canvasWidth.code(); x += 1) {
-			for (var y = 0; y < this.canvasHeight.code(); y += 1) {
-				var index = (y * this.canvasWidth.code() + x) * 4;
-				var col = this.frag(x / this.canvasWidth.code(), y / this.canvasHeight.code());
+		for (let x = 0; x < this.canvasWidth.code(); x += 1) {
+			for (let y = 0; y < this.canvasHeight.code(); y += 1) {
+				let index = (y * this.canvasWidth.code() + x) * 4;
+				let col = this.frag(x / this.canvasWidth.code(), y / this.canvasHeight.code());
 				this.rawData[index] = col.R();
 				this.rawData[index + 1] = col.G();
 				this.rawData[index + 2] = col.B();
@@ -142,4 +142,4 @@ class Momo {
 	
 }
 
-var nowMomo = new Momo();
+let nowMomo = new Momo();

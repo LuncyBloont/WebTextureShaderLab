@@ -1,8 +1,8 @@
-var selector = document.getElementById("script_selector");
+let selector = document.getElementById("script_selector");
 (function () {
-	for (var i = 0; i < scriptList.length; i++) {
-		var option = document.createElement("option");
-		var src = scriptsRoot + scriptList[i] + ".js";
+	for (let i = 0; i < scriptList.length; i++) {
+		let option = document.createElement("option");
+		let src = scriptsRoot + scriptList[i] + ".js";
 		
 		momoScript = document.createElement("script");
 		momoScript.src = src;

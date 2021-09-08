@@ -1,6 +1,7 @@
-var scriptsRoot = "graphicsScripts/"
-var scriptList = [
+let scriptsRoot = "graphicsScripts/"
+let scriptList = [
 	"DemoNoise",
 	"DemoGrid",
-	"Example"
+	"Example",
+	"DiffuseNoise"
 ]
