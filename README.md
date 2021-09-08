@@ -66,3 +66,4 @@ class DiffuseNoise extends Momo {
 在这个例子中，本着色器需要使用噪声着色器，所以在‘start’代码段中，我们为tool声明了noise属性，它是噪声着色器的frag函数；我们又实例化了noiseStart函数，它是噪声着色器的tool对象的构造函数，使用它构造了本着色器tool对象的noiseStart。<br>
 接下来，正如frag代码段中的内容，我们调用tool中noise函数，即噪声着色器的frag函数，生成了我们需要的噪声信息。
 ##### 注意：因为需要在控制面板调节噪声参数，本着色器的参数设置需要包含噪声所需要的所有参数，以便噪声着色器frag函数的momo参数能够正确获取需要的噪声参数。同时，噪声着色器frag函数需要的tool参数应该使用本着色器start代码段中设置的noiseStart，即噪声着色器自己的tool对象。
+![多着色器效果](example/Example3.png "多着色器效果") <br>
