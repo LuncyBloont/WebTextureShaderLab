@@ -9,13 +9,16 @@ class DiffuseNoise extends Momo {
 		this.frag = `
 			let col = new D2dColor(momo.baseColor);
 			let col2 = new D2dColor(momo.holeColor);
-			let dark = tool.noise(x, y, momo, tool.noiseStart).R();
+			tool.noiseMomo.scale = momo.scale;
+			tool.noiseMomo.times = momo.times;
+			let dark = tool.noise(x, y, tool.noiseMomo, tool.noiseStart).R();
 			return colorLerp(col, col2, dark / 255);
 		`;
 		this.start = `
 			this.noise = new Function("x", "y", "momo", "tool", new DemoNoise().frag);
 			let noiseStart = new Function("momo", new DemoNoise().start);
 			this.noiseStart = new noiseStart(momo);
+			this.noiseMomo = getMomoObj(new DemoNoise());
 		`;
 	}
 }

@@ -57,3 +57,8 @@
 .item input {
 	width: 90%;
 }
+
+.buffer {
+	position: absolute;
+	display: none;
+}

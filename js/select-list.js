@@ -3,5 +3,8 @@ let scriptList = [
 	"DemoNoise",
 	"DemoGrid",
 	"Example",
-	"DiffuseNoise"
+	"DiffuseNoise",
+	"Mesh0",
+	"Wave",
+	"Normals"
 ]

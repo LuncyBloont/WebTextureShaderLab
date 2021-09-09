@@ -12,7 +12,7 @@
 		
 	</head>
 	<body>
-		<table class="main-table" border="1">
+		<table class="main-table">
 			<tr>
 				<th class="texture-view-head">Texture</th>
 				<th>Properties</th>
@@ -37,6 +37,12 @@
 		</table>
 	<script>
 		renderMomo();
+		loadPrepare();
+		let tmp0 = load2D("example/Example.png");
+		let tmp1 = load2D("example/Example1.png");
+		let tmp2 = load2D("example/Example2.png");
+		let tmp3 = load2D("example/Example3.png");
+		// setTimeout('alert(texLib[tmp0]);alert(texLib[tmp1]);alert(texLib[tmp2]);alert(texLib[tmp3]);', 1000);
 	</script>
 	</body>
 </html>

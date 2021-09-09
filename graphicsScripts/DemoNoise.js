@@ -24,22 +24,22 @@ class DemoNoise extends Momo {
 				let yy;
 				xx = parseInt(x * scale) / scale;
 				yy = parseInt(y * scale) / scale;
-				let a1 = Math.abs(Math.sin(dot(xx, yy, 12.9898, 378.23324)) * 34053.345);
+				let a1 = Math.abs(Math.sin(dot([xx, yy], [12.9898, 378.23324])) * 34053.345);
 				a1 = a1 - parseInt(a1);
 				
 				xx = parseInt(x * scale + 1) / scale;
 				yy = parseInt(y * scale) / scale;
-				let a2 = Math.abs(Math.sin(dot(xx, yy, 12.9898, 378.23324)) * 34053.345);
+				let a2 = Math.abs(Math.sin(dot([xx, yy], [12.9898, 378.23324])) * 34053.345);
 				a2 = a2 - parseInt(a2);
 				
 				xx = parseInt(x * scale) / scale;
 				yy = parseInt(y * scale + 1) / scale;
-				let a3 = Math.abs(Math.sin(dot(xx, yy, 12.9898, 378.23324)) * 34053.345);
+				let a3 = Math.abs(Math.sin(dot([xx, yy], [12.9898, 378.23324])) * 34053.345);
 				a3 = a3 - parseInt(a3);
 				
 				xx = parseInt(x * scale + 1) / scale;
 				yy = parseInt(y * scale + 1) / scale;
-				let a4 = Math.abs(Math.sin(dot(xx, yy, 12.9898, 378.23324)) * 34053.345);
+				let a4 = Math.abs(Math.sin(dot([xx, yy], [12.9898, 378.23324])) * 34053.345);
 				a4 = a4 - parseInt(a4);
 				
 				let ddx = x * scale - parseInt(x * scale);

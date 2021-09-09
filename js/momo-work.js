@@ -14,6 +14,7 @@ onmessage = function (event) {
 	let para = event.data[5];
 	let frag = new Function("x", "y", "momo", "tool", momo);
 	let start = new Function("momo", momos);
+	texLib = event.data[6];
 	
 	let tool = new start(para);
 	

@@ -17,13 +17,15 @@ class D2dRange {
 		this.d2dFlag = "range";
 	    this.min = min;
 		this.max = max;
-		this.value = value;
+		this.scale = 200;
+		this.value = value * this.scale;
+		
 	}
 	code() {
 		return Math.max(this.min, Math.min(this.max, eval(this.value)));
 	}
 	set(v) {
-		this.value = Math.max(this.min, Math.min(this.max, eval(v)));
+		this.value = Math.max(this.min, Math.min(this.max, eval(v) / this.scale));
 	}
 }
 
@@ -93,6 +95,39 @@ class D2dColor {
 	color(r, g, b, a) {
 		this.alpha = a;
 		this.value = "#" + this.ff(r) + this.ff(g) + this.ff(b);
+		console.log(this.value);
+	}
+}
+
+class D2dToggle {
+	constructor(v) {
+		this.d2dFlag = "toggle";
+	    this.value = v ? true : false;
+	}
+	code() {
+		return this.value ? true : false;
+	}
+	set(v) {
+		this.value = v ? true : false;
+	}
+}
+
+class D2dImage {
+	constructor(src) {
+	    this.d2dFlag = "image";
+		this.value = load2D(src);
+	}
+	code() {
+		return parseInt(eval(this.value));
+	}
+	set (v) {
+		if (!v) return;
+		const fread = new FileReader();
+		let target = this;
+		fread.onload = function () {
+			target.value = load2D(fread.result);
+		};
+		fread.readAsDataURL(v);
 	}
 }
 
@@ -140,6 +175,16 @@ class Momo {
 		}
 	}
 	
+}
+
+function getMomoObj(momo) {
+	let obj = new Object();
+	for (let i in momo) {
+		if (momo[i].d2dFlag) {
+			obj[i] = momo[i].code();
+		}
+	}
+	return obj;
 }
 
 let nowMomo = new Momo();
