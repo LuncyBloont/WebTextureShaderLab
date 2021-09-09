@@ -1,6 +1,8 @@
 # WebTextureShaderLab
 一个基于web技术的2D shader框架，使用多线程软渲染。实现了基于js语法的简易片元着色器；实现了Shader脚本参数可视化面板；支持自定义着色器。
 
+![利用着色器快速制作法线贴图](example/Example4.png "利用着色器快速制作法线贴图")<br>
+
 ## 自定义着色器 Write Shader
 在graphicsScripts目录下新建一个js脚本文件，编写继承自Momo类的着色器子类：
 ```
@@ -30,7 +32,7 @@ let scriptList = [
 	"Example"
 ]
 ```
-运行index.html页面，在右边着色器列表选择Example着色器：
+运行index.html页面，在右边着色器列表选择Example着色器：<br>
 ![第一次选中着色器](example/Example.png "第一次选中着色器") <br>
 
 ![修改着色器属性](example/Example1.png "修改着色器属性") <br>

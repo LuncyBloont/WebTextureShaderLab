@@ -35,6 +35,23 @@ function noise(p, s) {
 	return frac(Math.abs(Math.sin(dot(p, [12.9898, 378.23324]) + s) * 34053.345));
 }
 
+function light(col) {
+	return (col.R() + col.G() + col.B()) / 3 / 255;
+}
+
+function normalize3(v) {
+	let l = Math.sqrt(Math.pow(v[0], 2) + Math.pow(v[1], 2) + Math.pow(v[2], 2));
+	return [v[0] / l, v[1] / l, v[2] / l];
+}
+
+function cross3(v1, v2) {
+	return [
+		v1[1] * v2[2] - v2[1] * v1[2],
+		v2[0] * v1[2] - v1[0] * v2[2],
+		v1[0] * v2[1] - v2[0] * v1[1]
+	];
+}
+
 
 let load2Dimg = null;
 let texLib = [];

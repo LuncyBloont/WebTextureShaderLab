@@ -95,7 +95,6 @@ class D2dColor {
 	color(r, g, b, a) {
 		this.alpha = a;
 		this.value = "#" + this.ff(r) + this.ff(g) + this.ff(b);
-		console.log(this.value);
 	}
 }
 
