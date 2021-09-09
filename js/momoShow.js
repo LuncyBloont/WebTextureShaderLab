@@ -58,9 +58,9 @@ function renderMomo() {
 			
 			if (kit.type && kit.type === "checkbox") {
 				kit.checked = nowMomo[i].value;
-			} else if (kit.type && kit.type === "file") {
-				
-			} else {
+			} else if (kit.type && kit.type === "color") {
+				kit.value = nowMomo[i].str();
+			} else if (kit.type && kit.type !== "file") {
 				kit.value = nowMomo[i].value;
 			}
 			

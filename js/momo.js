@@ -64,27 +64,39 @@ class D2dScaleFloat extends D2dFloat {
 
 class D2dColor {
 	constructor(value) {
+		if (typeof(value) == typeof([]) && value.length < 3) value = [255, 0, 255]; 
+		if (typeof(value) == typeof("") && value.length < 7) value = [128, 0, 128];
 	    this.d2dFlag = "color";
 		this.value = value;
 		this.alpha = 1;
+		if (typeof(value) == typeof("") && value.length >= 7) {
+			this.set(value);
+		}
 	}
 	code() {
 		return this.value;
 	}
 	set(v) {
-		this.value = v;
+		this.value = [
+			eval("0x" + (v + "").substr(1, 2)),
+			eval("0x" + (v + "").substr(3, 2)),
+			eval("0x" + (v + "").substr(5, 2))
+		];
 	}
 	R() {
-		return eval("0x" + (this.value + "").substr(1, 2));
+		return this.value[0];
 	}
 	G() {
-		return eval("0x" + (this.value + "").substr(3, 2));
+		return this.value[1];
 	}
 	B() {
-		return eval("0x" + (this.value + "").substr(5, 2));
+		return this.value[2];
 	}
 	A() {
 		return this.alpha;
+	}
+	str() {
+		return "#" + this.ff(this.R()) + this.ff(this.G()) + this.ff(this.B());
 	}
 	ff(v) {
 		let s = parseInt(v).toString(16);
@@ -94,7 +106,7 @@ class D2dColor {
 	}
 	color(r, g, b, a) {
 		this.alpha = a;
-		this.value = "#" + this.ff(r) + this.ff(g) + this.ff(b);
+		this.value = [r, g, b];
 	}
 }
 

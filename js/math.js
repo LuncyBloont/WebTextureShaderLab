@@ -4,7 +4,7 @@ function dot(p1, p2) {
 
 function colorLerp(c1, c2, lerp) {
 	lerp = Math.min(1, Math.max(lerp, 0));
-	let col = new D2dColor("#FFFFFF");
+	let col = new D2dColor('');
 	let blerp = 1 - lerp;
 	col.color(
 		c1.R() * lerp + c2.R() * blerp,
@@ -44,6 +44,46 @@ function normalize3(v) {
 	return [v[0] / l, v[1] / l, v[2] / l];
 }
 
+function add(v1, v2) {
+	let r = [];
+	for (let i = 0; i < v1.length; i++) {
+		r[i] = v1[i] + v2[i];
+	}
+	return r;
+}
+
+function sub(v1, v2) {
+	let r = [];
+	for (let i = 0; i < v1.length; i++) {
+		r[i] = v1[i] - v2[i];
+	}
+	return r;
+}
+
+function mul(v1, v2) {
+	let r = [];
+	for (let i = 0; i < v1.length; i++) {
+		r[i] = v1[i] * v2[i];
+	}
+	return r;
+}
+
+function mulnum(v, n) {
+	let r = [];
+	for (let i = 0; i < v.length; i++) {
+		r[i] = v[i] * n;
+	}
+	return r;
+}
+
+function divnum(v, n) {
+	let r = [];
+	for (let i = 0; i < v.length; i++) {
+		r[i] = v[i] / n;
+	}
+	return r;
+}
+
 function cross3(v1, v2) {
 	return [
 		v1[1] * v2[2] - v2[1] * v1[2],
@@ -80,7 +120,7 @@ function load2D(src) {
 function tex2D(tex, x, y) {
 	x = frac(frac(x) + 1);
 	y = frac(frac(y) + 1);
-	let col = new D2dColor("#FFFFFF");
+	let col = new D2dColor('');
 	let index = parseInt(y * texLib[tex][2]) * texLib[tex][1] + parseInt(x * texLib[tex][1]);
 	index *= 4;
 	col.color(texLib[tex][0][index], texLib[tex][0][index + 1], texLib[tex][0][index + 2], texLib[tex][0][index + 3] / 255);
