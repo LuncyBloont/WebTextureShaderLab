@@ -6,5 +6,6 @@ let scriptList = [
 	"DiffuseNoise",
 	"Mesh0",
 	"Wave",
-	"Normals"
+	"Normals",
+	"CosDraw"
 ]
