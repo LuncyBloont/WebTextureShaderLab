@@ -15,6 +15,10 @@ function colorLerp(c1, c2, lerp) {
 	return col;
 }
 
+function limit01(a) {
+	return Math.min(Math.max(0, a), 1);
+}
+
 function frac(a) {
 	return a - parseInt(a);
 }
@@ -125,4 +129,10 @@ function tex2D(tex, x, y) {
 	index *= 4;
 	col.color(texLib[tex][0][index], texLib[tex][0][index + 1], texLib[tex][0][index + 2], texLib[tex][0][index + 3] / 255);
 	return col;
+}
+
+function limit(n) {
+	if (n > 0) return n - parseInt(n);
+	if (n < 0) return n + parseInt(-n) + 1;
+	if (n == 0) return 0;
 }
