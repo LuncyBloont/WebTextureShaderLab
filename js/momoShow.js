@@ -12,7 +12,7 @@ for (let i = 0; i < workerSize; i++) {
 		if (!worker[i]) worker[i] = [];
 		worker[i][j] = new Worker("./js/momo-work.js");
 		worker[i][j].onmessage = function (event) {
-			console.log(event.data[0] + ", " + event.data[1] + ", " + event.data[2] + ", " + event.data[3] + " Worker complete.");
+			// console.log(event.data[0] + ", " + event.data[1] + ", " + event.data[2] + ", " + event.data[3] + " Worker complete.");
 			for (let x = event.data[0]; x < event.data[1]; x++) {
 				for (let y = event.data[2]; y < event.data[3]; y++) {
 					let index = (y * nowMomo.canvasWidth.code() + x) * 4;

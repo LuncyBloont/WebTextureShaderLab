@@ -10,9 +10,9 @@
 		<script src="js/momoShow.js"></script>
 		<script src="js/select-list.js"></script>
 		<script src="js/shaderCrt.js"></script>
-		
 	</head>
 	<body>
+		<div id="scriptLib"></div>
 		<table class="main-table">
 			<tr>
 				<th class="texture-view-head">Texture</th>
@@ -30,8 +30,8 @@
 						<select title="Script" id="script_selector">
 							<option value="Momo" selected="selected">None</option>
 						</select>
-						<span class="cbutton" onclick="loadSelector();">🔁</span>
-						<button onclick="createSdr('DiffuseNoise')">Create</button>
+						<span class="cbutton" onclick="location.reload();">🔁</span>
+						<button onclick="createSdr('Example')">Create</button>
 						<script src="js/selector.js"></script>
 						<table id="momo_panel"></table>
 					</div>
@@ -46,6 +46,7 @@
 		let tmp2 = load2D("example/Example2.png");
 		let tmp3 = load2D("example/Example3.png");
 		// setTimeout('alert(texLib[tmp0]);alert(texLib[tmp1]);alert(texLib[tmp2]);alert(texLib[tmp3]);', 1000);
+		
 	</script>
 	</body>
 </html>

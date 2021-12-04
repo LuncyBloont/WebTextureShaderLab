@@ -1,5 +1,30 @@
+
+function vec(p, n) {
+	let res = [];
+	for (let i = 0; i < n; i++) {
+		res[i] = (i < p.length ? p[i] : (i == 3 ? 1. : 0.));
+	}
+	return res;
+}
+
+function min(a, b) {
+	return a < b ? a : b;
+}
+
+function max(a, b) {
+	return a > b ? a : b;
+}
+
+function pow(a, p) {
+	return Math.pow(a, p);
+}
+
 function dot(p1, p2) {
-	return p1[0] * p2[0] + p1[1] * p2[1];
+	let res = 0.;
+	for (let i = 0; i < min(p1.length, p2.length); i++) {
+		res += p1[i] * p2[i];
+	}
+	return res;
 }
 
 function colorLerp(c1, c2, lerp) {
@@ -24,11 +49,15 @@ function frac(a) {
 }
 
 function length(p) {
-	return Math.sqrt(Math.pow(p[0], 2) + Math.pow(p[1], 2));
+	let ss = 0.;
+	for (let i = 0; i < p.length; i++) {
+		ss += pow(p[i], 2);
+	}
+	return Math.sqrt(ss);
 }
 
 function distance(p1, p2) {
-	return length([p2[0] - p1[0], p2[1] - p1[1]]);
+	return length(sub(p1, p2));
 }
 
 function mul2(p1, p2) {
@@ -50,7 +79,7 @@ function normalize3(v) {
 
 function add(v1, v2) {
 	let r = [];
-	for (let i = 0; i < v1.length; i++) {
+	for (let i = 0; i < min(v1.length, v2.length); i++) {
 		r[i] = v1[i] + v2[i];
 	}
 	return r;
@@ -58,7 +87,7 @@ function add(v1, v2) {
 
 function sub(v1, v2) {
 	let r = [];
-	for (let i = 0; i < v1.length; i++) {
+	for (let i = 0; i < min(v1.length, v2.length); i++) {
 		r[i] = v1[i] - v2[i];
 	}
 	return r;
@@ -66,7 +95,7 @@ function sub(v1, v2) {
 
 function mul(v1, v2) {
 	let r = [];
-	for (let i = 0; i < v1.length; i++) {
+	for (let i = 0; i < min(v1.length, v2.length); i++) {
 		r[i] = v1[i] * v2[i];
 	}
 	return r;
@@ -96,6 +125,21 @@ function cross3(v1, v2) {
 	];
 }
 
+function cos(s) {
+	return Math.cos(s);
+}
+
+function sin(s) {
+	return Math.sin(s);
+}
+
+function tan(s) {
+	return Math.tan(s);
+}
+
+function tan2(s) {
+	return Math.tan2(s);
+}
 
 let load2Dimg = null;
 let texLib = [];
