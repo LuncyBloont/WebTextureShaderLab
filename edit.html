@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Shader edit</title>
+        <link type="text/css" rel="stylesheet" href="css/edit.css" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <script src="js/select-list.js"></script>
+        <script src="js/shaderCrt.js"></script>
+        <script src="js/momo.js"></script>
+    </head>
+    <body>
+        <div style="width: 80%; margin: auto;">
+            <div>
+                <button onclick="editSave()">save</button>
+                <button onclick="editLoad()">load</button>
+            </div>
+            <div>
+                code<br>
+                <textarea id="codeArea"></textarea>
+            </div>
+        </div>
+        <script>
+            editInit();
+        </script>
+    </body>
+</html>

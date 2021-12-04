@@ -9,6 +9,7 @@
 		<script src="js/math.js"></script>
 		<script src="js/momoShow.js"></script>
 		<script src="js/select-list.js"></script>
+		<script src="js/shaderCrt.js"></script>
 		
 	</head>
 	<body>
@@ -29,6 +30,8 @@
 						<select title="Script" id="script_selector">
 							<option value="Momo" selected="selected">None</option>
 						</select>
+						<span class="cbutton" onclick="loadSelector();">🔁</span>
+						<button onclick="createSdr('DiffuseNoise')">Create</button>
 						<script src="js/selector.js"></script>
 						<table id="momo_panel"></table>
 					</div>

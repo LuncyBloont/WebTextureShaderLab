@@ -1,5 +1,6 @@
 let selector = document.getElementById("script_selector");
-(function () {
+function loadSelector () {
+	selector.innerHTML = "";
 	for (let i = 0; i < scriptList.length; i++) {
 		let option = document.createElement("option");
 		let src = scriptsRoot + scriptList[i] + ".js";
@@ -18,4 +19,6 @@ let selector = document.getElementById("script_selector");
 		nowMomo.draw(document.getElementById("canvas"));
 		renderMomo();
 	};
-})();
+}
+
+loadSelector();
