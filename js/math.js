@@ -69,7 +69,7 @@ function noise(p, s) {
 }
 
 function light(col) {
-	return (col.R() + col.G() + col.B()) / 3 / 255;
+	return (col.R() * 0.3 + col.G() * 0.6 + col.B() * 0.1) / 255;
 }
 
 function normalize3(v) {
